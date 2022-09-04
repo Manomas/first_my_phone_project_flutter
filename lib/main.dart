@@ -1,7 +1,6 @@
-import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:phone_project/constans.dart';
-import 'package:phone_project/navegation.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -19,9 +18,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
-
-
 class InputPage extends StatefulWidget {
   const InputPage({Key? key}) : super(key: key);
 
@@ -37,285 +33,281 @@ class _InputPageState extends State<InputPage> {
       _selectedIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
-      backgroundColor: kBG,
-      appBar: AppBar(
+    return Container(
+      child: Scaffold(
         backgroundColor: kBG,
-        centerTitle: true,
-        title: Text(
-          "BMI calculatour",
-          style: kBodyTextStyle,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(30),
+        appBar: AppBar(
+          backgroundColor: Colors.cyan,
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.arrow_forward_outlined),
+              padding: EdgeInsets.only(right: 25),
+              tooltip: 'Show Snackbar',
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('This is a snackbar')));
+              },
+            ),
+          ],
+
+          title: Container(
+            margin: EdgeInsets.only(left: 20),
+            padding: EdgeInsets.all(5),
+
+            decoration: BoxDecoration(
+              color: Colors.green,
+              borderRadius: BorderRadius.circular(7),
+            ),
+            child:Text("Бизнес-центр Гулливер"),
+
           ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              bottom: Radius.circular(30),
+            ),
+          ),
+          centerTitle: false,
+          titleSpacing: 0.0,
         ),
-      ),
-      body: DraggableScrollableSheet(
 
-        initialChildSize: 1,
-        maxChildSize: 1,
-        minChildSize: 0.2,
-        builder: (context, scrollController){
+        body: DraggableScrollableSheet(
+            initialChildSize: 1,
+            maxChildSize: 1,
+            minChildSize: 0.2,
+            builder: (context, scrollController) {
+              return SingleChildScrollView(
+                  physics: const RangeMaintainingScrollPhysics(),
 
-          return SingleChildScrollView(
-            controller: scrollController,
-
-            child:    Container(child: Column(
-
-              children: [
-
-                 Container(
-                   height: 200,
-                   child: ReusableCard(
-                      
-
-                      child: Column(
-
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Container(
-
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              "doxod za fevral 2021",
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                          Container(
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "1",
-                                    style:kNumberTextStyle,
+                  controller: scrollController,
+                  child: Container(
+                    child: Column(
+                      children: [
+                        Container(
+                          height: 200,
+                          child: ReusableCard(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                Container(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    "Доход за февраль 2021",
+                                    style: kTitleTextInContainer,
                                   ),
-                                  SizedBox(
-                                    width: 15,
-                                  ),
-                                  Text(
-                                    "345",
+                                ),
+                                Container(
+                                  child: Text(
+                                    "1 345 685 ₽",
                                     style: kNumberTextStyle,
                                   ),
-                                  SizedBox(
-                                    width: 15,
-                                  ),
-                                  Text(
-                                    "650",
-                                    style: kNumberTextStyle ,
-                                  ),
-                                  SizedBox(
-                                    width: 15,
-                                  ),
-                                  Text(
-                                    "P",
-                                    style:kNumberTextStyle,
-                                  ),
-                                ],
-                              )),
-                          Row(
+                                ),
+                                Row(
+                                  children: [
+                                    Container(
+                                      child: Text(
+                                        "540 390 ₽  ",
+                                        style: kSecondNumberTextStyle,
+                                      ),
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.all(5),
+                                      decoration: BoxDecoration(
+                                        color: Colors.brown,
+                                        borderRadius: BorderRadius.circular(7),
+                                      ),
+                                      child: Text("долг"),
+
+                                    ),
+                                  ],
+                                ),
+
+                              ],
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(18),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Text(
-                                "540",
-                                style:kSecondNumberTextStyle,
+                              Container(
+                                child: Text("За период"),
                               ),
-                              SizedBox(
-                                width: 10,
+                              SizedBox(width: 50,),
+                              Container(
+                                padding: EdgeInsets.all(9),
+                                decoration: BoxDecoration(
+                                  color: Colors.brown,
+                                  borderRadius: BorderRadius.circular(7),
+                                ),
+                                child: Text("январь 2021"),
                               ),
-                              Text(
-                                "390",
-                                style:kSecondNumberTextStyle,
+                              Container(
+                                child: Text("по"),
                               ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                "P",
-                                style: kSecondNumberTextStyle,
+                              Container(
+
+                                padding: EdgeInsets.all(9),
+                                decoration: BoxDecoration(
+                                  color: Colors.brown,
+                                  borderRadius: BorderRadius.circular(7),
+                                ),
+                                child: Text("июнь 2021"),
                               ),
                             ],
                           ),
-                        ],
-                      ),
+                        ),
+                        Container(
+                          height: 200,
+                          child: ReusableCard(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                Text(
+                                  "Общий доход",
+                                  style: kTitleTextInContainer,
+                                ),
+                                Text(
+                                  '145 375 530 ₽',
+                                  style: kNumberTextStyle,
+                                ),
+                                Text(
+                                  "Чистая прибыль ",
+                                  style: kTitleTextInContainer,
+                                ),
+                                Text(
+                                  '56 531 270 ₽',
+                                  style: kNumberTextStyle,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 300,
+                          child: ReusableCard(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                Text(
+                                  "Упущенный доход за период",
+                                  style: kTitleTextInContainer,
+                                ),
+                                Text(
+                                  "540 390 ₽",
+                                  style: kNumberTextStyle,
+                                ),
+                                Divider(
+                                  color: Colors.black,
+                                  thickness: 2,
+                                ),
+                                Text(
+                                  "За простой свободной пл.",
+                                  style: kTitleTextInContainer,
+                                ),
+                                Text(
+                                  "260 000 ₽",
+                                  style: kNumberTextStyle,
+                                ),
+                                Text(
+                                  "За долги",
+                                  style: kTitleTextInContainer,
+                                ),
+                                Text(
+                                  "220 300 ₽",
+                                  style: kNumberTextStyle,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 300,
+                          child: ReusableCard(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                Text(
+                                  "Общий расход",
+                                  style: kTitleTextInContainer,
+                                ),
+                                Text(
+                                  "89 764 300 ₽",
+                                  style: kNumberTextStyle,
+                                ),
+                                Divider(
+                                  color: Colors.black,
+                                  thickness: 2,
+                                ),
+                                Text(
+                                  "Коммуналка",
+                                  style: kTitleTextInContainer,
+                                ),
+                                Text(
+                                  "54 946 000 ₽",
+                                  style: kSecondNumberTextStyle,
+                                ),
+                                Text(
+                                  "Тех работы",
+                                  style: kTitleTextInContainer,
+                                ),
+                                Text(
+                                  "21 124 300 ₽",
+                                  style: kSecondNumberTextStyle,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                 ),
-
-
-                 Container(
-                   height: 200,
-                   child: ReusableCard(
-
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Text(
-                            "obchi daxod",
-                            style: kTextStayle,
-                          ),
-                          Text(
-                            '145375530P',
-                            style: kNumberTextStyle,
-                          ),
-                          Text(
-                            "chistaya pribil",
-                            style:kTextStayle,
-                          ),
-                          Text(
-                            '56531270P',
-                            style: kNumberTextStyle,
-
-                          ),
-                        ],
-                      ),
-                    ),
-                 ),
-
-
-                   Container(
-                     height: 300,
-                     child: ReusableCard(
-
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Text(
-                            "uprashonni daxod za mecec",
-                            style: kTextStayle,
-                          ),
-                          Text(
-                            "540390P",
-                            style: kNumberTextStyle,
-                          ),
-
-                          Divider(
-                            color: Colors.black,
-                            thickness: 2,
-                          ),
-                          Text(
-                            "Za prostoi swobodni pl.",
-                            style: kTextStayle,
-                          ),
-                          Text(
-                            "260000P",
-                            style: kNumberTextStyle,
-                          ),
-                          Text(
-                            "Za dolgi",
-                            style: kTextStayle,
-                          ),
-                          Text(
-                            "220300P",
-                            style: kNumberTextStyle,
-                          ),
-                        ],
-                      ),
-                  ),
-                   ),
-
-
-                  Container(
-                    height: 300,
-                    child: ReusableCard(
-
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Text(
-                            "uprashonni daxod za mecec",
-                            style: kTextStayle,
-                          ),
-                          Text(
-                            "540390P",
-                            style: kNumberTextStyle,
-                          ),
-
-                          Divider(
-                            color: Colors.black,
-                            thickness: 2,
-                          ),
-                          Text(
-                            "Za prostoi swobodni pl.",
-                            style: kTextStayle,
-                          ),
-                          Text(
-                            "260000P",
-                            style: kNumberTextStyle,
-                          ),
-                          Text(
-                            "Za dolgi",
-                            style: kTextStayle,
-                          ),
-                          Text(
-                            "220300P",
-                            style: kNumberTextStyle,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-
-
-              ],
-
-            ),)
-
-
-          );
-        }
-
-      ),
-
-    bottomNavigationBar: ClipRRect(
-    borderRadius: BorderRadius.only(
-    topLeft: Radius.circular(30.0),
-    topRight: Radius.circular(30.0),
-    ),
-            child :BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-                backgroundColor: Colors.green
-            ),
-            BottomNavigationBarItem(
+                  ));
+            }),
+        bottomNavigationBar: ClipRRect(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30.0),
+            topRight: Radius.circular(30.0),
+          ),
+          child: BottomNavigationBar(
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Home',
+                  backgroundColor: Colors.green),
+              BottomNavigationBarItem(
                 icon: Icon(Icons.search),
                 label: 'Search',
                 backgroundColor: Colors.deepOrangeAccent,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-              backgroundColor: Colors.blue,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: 'Settings',
-              backgroundColor: Colors.purpleAccent,
-            ),
-          ],
-          type: BottomNavigationBarType.shifting,
-          currentIndex: _selectedIndex,
-          selectedItemColor: Colors.white,
-          iconSize: 40,
-          onTap: _onItemTapped,
-          elevation: 5,
-
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Profile',
+                backgroundColor: Colors.blue,
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.settings),
+                label: 'Settings',
+                backgroundColor: Colors.purpleAccent,
+              ),
+            ],
+            type: BottomNavigationBarType.shifting,
+            currentIndex: _selectedIndex,
+            selectedItemColor: Colors.white,
+            iconSize: 40,
+            onTap: _onItemTapped,
+            elevation: 5,
+          ),
+        ),
       ),
-    ),
-
     );
-
   }
 }
 
@@ -324,10 +316,8 @@ class ReusableCard extends StatelessWidget {
 
   final Widget child;
 
-
   const ReusableCard({
     Key? key,
-
     this.color = kInactiveCardColor,
     required this.child,
   }) : super(key: key);
@@ -335,7 +325,6 @@ class ReusableCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-
       child: Container(
         child: child,
         margin: EdgeInsets.all(10),
