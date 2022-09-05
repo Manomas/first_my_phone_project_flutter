@@ -9,7 +9,7 @@
 .history
 .svn/
 migrate_working_dir/
-
+README.md
 # IntelliJ related
 *.iml
 *.ipr
@@ -31,7 +31,6 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
-README.md
 # Web related
 lib/generated_plugin_registrant.dart
 
@@ -45,3 +44,4 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
