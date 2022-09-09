@@ -7,7 +7,7 @@ class LostIncome extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return Container(
+    return SizedBox(
       height: 300,
       width: screenWidth - 10,
       child: ReusableCard(
@@ -15,7 +15,7 @@ class LostIncome extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
+          children: const [
             Text(
               "Упущенный доход за период",
               style: TextStyle(

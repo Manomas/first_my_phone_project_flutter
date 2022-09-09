@@ -7,15 +7,15 @@ class TotalIncome extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return   Container(
+    return   SizedBox(
       height: 300,
       width: screenWidth - 10,
       child: ReusableCard(
-        color: (Color(0xFFebdcd1)),
+        color: (const Color(0xFFebdcd1)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
+          children: const [
             Text(
               "Общий расход",
               style: TextStyle(

@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:phone_project/home_page/home_construction/monthly_income.dart';
 import 'package:phone_project/home_page/home_construction/net_profit.dart';
@@ -10,19 +11,12 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-
-    return  DraggableScrollableSheet(
-        initialChildSize: 1,
-        maxChildSize: 1,
-        minChildSize: 0.2,
-        builder: (context, scrollController) {
           return SingleChildScrollView(
               physics: const RangeMaintainingScrollPhysics(),
-              controller: scrollController,
-              child: Container(
+              child: SizedBox(
                 width: screenWidth - 10,
                 child: Column(
-                  children: [
+                  children: const [
                     MonthlyIncome(),
                     SemiAnnual(),
                     NetProfit(),
@@ -31,6 +25,5 @@ class Body extends StatelessWidget {
                   ],
                 ),
               ));
-        });
   }
 }

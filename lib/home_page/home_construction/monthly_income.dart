@@ -7,18 +7,18 @@ class MonthlyIncome extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return  Container(
+    return  SizedBox(
       height: 200,
       width: screenWidth - 10,
       child: ReusableCard(
-        color: (Color(0xFFf2f2f2)),
+        color: (const Color(0xFFf2f2f2)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
               alignment: Alignment.centerLeft,
-              child: Text(
+              child: const Text(
                 "Доход за февраль 2021",
                 style: TextStyle(
                   color: Colors.black,
@@ -27,38 +27,34 @@ class MonthlyIncome extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              child: Text(
-                "1 345 685 ₽",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 40.0,
-                  fontWeight: FontWeight.w500,
-                ),
+            const Text(
+              "1 345 685 ₽",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 40.0,
+                fontWeight: FontWeight.w500,
               ),
             ),
             Row(
               children: [
-                Container(
-                  child: Text(
-                    "540 390 ₽  ",
-                    style: TextStyle(
-                      color: Color(0xFFa77753),
-                      fontSize: 25.0,
-                      fontWeight: FontWeight.w500,
-                    ),
+                const Text(
+                  "540 390 ₽  ",
+                  style: TextStyle(
+                    color: const Color(0xFFa77753),
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
                   decoration: BoxDecoration(
-                    color: (Color(0xFFebdcd1)),
+                    color: (const Color(0xFFebdcd1)),
                     borderRadius: BorderRadius.circular(7),
                   ),
-                  child: Text(
+                  child: const Text(
                     "долг",
                     style: TextStyle(
-                      color: Color(0xFFa77753),
+                      color: const Color(0xFFa77753),
                       fontSize: 15,
                       fontWeight: FontWeight.w500,
                     ),

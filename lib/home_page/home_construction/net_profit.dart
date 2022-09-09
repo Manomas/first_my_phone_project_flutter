@@ -8,15 +8,15 @@ class NetProfit extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return Container(
+    return SizedBox(
       height: 200,
       width: screenWidth - 10,
       child: ReusableCard(
-        color: (Color(0xFFe2efef)),
+        color: (const Color(0xFFe2efef)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
+          children: const [
             Text(
               "Общий доход",
               style: TextStyle(
