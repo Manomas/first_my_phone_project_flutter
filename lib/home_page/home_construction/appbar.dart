@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:phone_project/navigation_bar.dart';
 import 'package:phone_project/home_page/home_construction/body.dart';
-class ScefdoldAndAppBarrPage extends StatelessWidget {
-  const ScefdoldAndAppBarrPage({Key? key}) : super(key: key);
+class AppBarrPage extends StatelessWidget {
+  const AppBarrPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,12 +10,12 @@ class ScefdoldAndAppBarrPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(80.0),
+        preferredSize: const Size.fromHeight(80.0),
         child: AppBar(
-          backgroundColor: Color(0xFF156a80),
+          backgroundColor: const Color(0xFF156a80),
           title: Container(
-            margin: EdgeInsets.only(top: 10),
-            padding: EdgeInsets.all(10),
+            margin: const EdgeInsets.only(top: 10),
+            padding: const EdgeInsets.all(10),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,

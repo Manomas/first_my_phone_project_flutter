@@ -11,7 +11,7 @@ class LostIncome extends StatelessWidget {
       height: 300,
       width: screenWidth - 10,
       child: ReusableCard(
-        color: (Color(0xFFf2f2f2)),
+        color: const Color(0xFFf2f2f2),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.stretch,

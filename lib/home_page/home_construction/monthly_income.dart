@@ -40,7 +40,7 @@ class MonthlyIncome extends StatelessWidget {
                 const Text(
                   "540 390 ₽  ",
                   style: TextStyle(
-                    color: const Color(0xFFa77753),
+                    color: Color(0xFFa77753),
                     fontSize: 25.0,
                     fontWeight: FontWeight.w500,
                   ),
@@ -54,7 +54,7 @@ class MonthlyIncome extends StatelessWidget {
                   child: const Text(
                     "долг",
                     style: TextStyle(
-                      color: const Color(0xFFa77753),
+                      color:  Color(0xFFa77753),
                       fontSize: 15,
                       fontWeight: FontWeight.w500,
                     ),

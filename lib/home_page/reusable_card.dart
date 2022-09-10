@@ -15,11 +15,12 @@ class ReusableCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Container(
-        child: child,
-        margin: EdgeInsets.all(10),
-        padding: EdgeInsets.only(left: 15),
+        margin: const EdgeInsets.all(10),
+        padding: const EdgeInsets.only(left: 15),
         decoration: BoxDecoration(
-            color: color, borderRadius: BorderRadius.all(Radius.circular(20))),
+            color: color, borderRadius: const BorderRadius.all(Radius.circular(20))),
+        child: child,
+
       ),
     );
   }

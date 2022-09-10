@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 class Navigation extends StatefulWidget {
   const Navigation({Key? key}) : super(key: key);
 
@@ -15,10 +16,11 @@ class _NavigationState extends State<Navigation> {
       _selectedIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      
+      height: 100,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
             topRight: Radius.circular(30), topLeft: Radius.circular(30)),
@@ -26,7 +28,6 @@ class _NavigationState extends State<Navigation> {
           BoxShadow(color: Colors.black45, spreadRadius: 0, blurRadius: 10),
         ],
       ),
-
       child: ClipRRect(
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(30.0),
@@ -35,29 +36,31 @@ class _NavigationState extends State<Navigation> {
         child: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
+              icon: Icon(FontAwesomeIcons.houseChimney),
+              label: 'Главная',
             ),
             BottomNavigationBarItem(
-              icon: Icon(FontAwesomeIcons.pieChart),
-              label: 'Analytics',
+              icon: Icon(
+                FontAwesomeIcons.chartPie,
+              ),
+              label: 'Аналитика',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.people_alt),
-              label: 'Profile',
+              icon: Icon(FontAwesomeIcons.userGroup),
+              label: 'Арендаторы',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: 'Settings',
+              icon: Icon(FontAwesomeIcons.gear),
+              label: 'Настройки',
             ),
           ],
           showUnselectedLabels: true,
           showSelectedLabels: true,
-          unselectedItemColor:Colors.grey,
-          type: BottomNavigationBarType.shifting,
+          unselectedItemColor: Colors.grey,
+          type: BottomNavigationBarType.fixed,
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.black,
-          iconSize: 40,
+          iconSize: 28,
           onTap: _onItemTapped,
           elevation: 5,
         ),
